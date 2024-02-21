@@ -6,11 +6,14 @@ const PORT = 3005;
 const app = express();
 const httpServer = createServer(app);
 
-app.use(cors({ origin: "http://localhost:3000" }));
+
+const isDev = app.settings.env === "development";
+const URL = isDev ? "http://localhost:3000" : "https://sketchbook-with-nextjs-p5lv76c2u-ry-rahul.vercel.app";
+app.use(cors({ origin: URL}));
 
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: URL,
     },
 });
 
