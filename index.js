@@ -8,7 +8,7 @@ const httpServer = createServer(app);
 
 
 const isDev = app.settings.env === "development";
-const URL = isDev ? "http://localhost:3005" : "https://sketchbook-with-nextjs-p5lv76c2u-ry-rahul.vercel.app";
+const URL = isDev ? "http://localhost:3000" : "https://sketchbook-with-nextjs-p5lv76c2u-ry-rahul.vercel.app";
 app.use(cors({ origin: URL}));
 
 const io = new Server(httpServer, {
